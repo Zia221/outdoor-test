@@ -1,0 +1,257 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Title */
+.home-container h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 20px 0 40px 0;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+/* Status */
+.status {
+  font-size: 24px;
+  margin-bottom: 50px;
+  color: #a0d8ef;
+  font-weight: 500;
+}
+
+/* Counts Container */
+.buttons {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.count-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  min-width: 220px;
+}
+
+.count-label {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.red-label {
+  color: #e74c3c;
+}
+.blue-label {
+  color: #3498db;
+}
+
+.count-box {
+  width: 260px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2),
+    inset 0 0 40px rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
+}
+
+.red-glow {
+  box-shadow: 0 0 60px rgba(231, 76, 60, 0.7),
+    inset 0 0 40px rgba(231, 76, 60, 0.2);
+}
+
+.blue-glow {
+  box-shadow: 0 0 60px rgba(52, 152, 219, 0.7),
+    inset 0 0 40px rgba(52, 152, 219, 0.2);
+}
+
+/* Top Buttons (Logout, Reset, Toggle) */
+.logout-btn,
+.reset-btn,
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.logout-btn {
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+.reset-btn {
+  right: 20px;
+  background: linear-gradient(45deg, #ff4757, #ff3838);
+  color: white;
+  border: none;
+}
+
+.reset-btn:hover {
+  background: linear-gradient(45deg, #ff3838, #ff2d42);
+  transform: translateY(-4px);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-switch {
+  width: 60px;
+  height: 30px;
+  background: #34495e;
+  border-radius: 50px;
+  position: relative;
+}
+
+.toggle-switch.active {
+  background: #3498db;
+}
+
+.toggle-knob {
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-switch.active .toggle-knob {
+  left: 32px;
+}
+
+.toggle-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Dark/Light Mode Backgrounds */
+.dark-mode {
+  background-image: url("../assets/dark.PNG");
+  background-size: cover;
+  background-position: center;
+}
+
+.light-mode {
+  background-image: url("../assets/light.PNG");
+  background-size: cover;
+  background-position: center;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .buttons {
+    gap: 80px;
+  }
+  .count-box {
+    width: 220px;
+    height: 180px;
+    font-size: 80px;
+  }
+  .count-label {
+    font-size: 32px;
+  }
+  .home-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .status {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .count-box {
+    width: 200px;
+    height: 160px;
+    font-size: 70px;
+  }
+  .count-label {
+    font-size: 28px;
+  }
+  .home-container h1 {
+    font-size: 30px;
+  }
+  .status {
+    font-size: 18px;
+  }
+
+  /* Stack top buttons vertically on mobile */
+  .logout-btn,
+  .reset-btn,
+  .theme-toggle {
+    position: static;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .theme-toggle {
+    flex-direction: column;
+    
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    gap: 8px;
+  }
+
+  .toggle-label {
+    font-size: 16px;
+    align-items: center;
+  }
+}
+
