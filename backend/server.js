@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db.js'); // Import from config
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db.js"); // Import from config
 
 dotenv.config();
 
@@ -12,13 +12,13 @@ app.use(cors());
 app.use(express?.json());
 
 // Connect to Database
-connectDB(); // Call the function
+await connectDB(); // Call the function
 
 // Routes
-app.use('/api/counts', require('./routes/countRoutes'));
-app.use('/api/auth', require('./routes/authRoutes'));
-app.get('/', (req, res) => {
-  res.send('Shooting Profiling Backend Running!');
+app.use("/api/counts", require("./routes/countRoutes"));
+app.use("/api/auth", require("./routes/authRoutes"));
+app.get("/", (req, res) => {
+  res.send("Shooting Profiling Backend Running!");
 });
 
 const PORT = process.env.PORT || 5000;
