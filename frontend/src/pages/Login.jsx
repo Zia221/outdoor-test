@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import backgroundImg from "../assets/snipperimg.png";
+import snipperimg from "../assets/snipperimg.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ function Login() {
   return (
     <div
       className="login-container"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
+      style={{ backgroundImage: `url(${snipperimg})` }}
     >
       {/* Dark overlay */}
       <div className="login-overlay"></div>
