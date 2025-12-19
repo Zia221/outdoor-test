@@ -1,31 +1,31 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
-import backgroundImg from '../assets/snipperimg.png'; // Adjust path/extension if needed
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import backgroundImg from "../assets/snipperimg.png";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const validEmail = 'admin@gmail.com';
-    const validPassword = '786';
+    const validEmail = "admin@gmail.com";
+    const validPassword = "786";
 
     if (email === validEmail && password === validPassword) {
-      localStorage.setItem('isLoggedIn', 'true');
-      navigate('/home');
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/home");
     } else {
-      alert('Invalid Email or Password');
-      setPassword('');
+      alert("Invalid Email or Password");
+      setPassword("");
     }
   };
 
   return (
-    <div 
-      className="login-container" 
+    <div
+      className="login-container"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       {/* Dark overlay */}
