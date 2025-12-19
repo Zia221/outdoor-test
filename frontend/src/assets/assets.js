@@ -1,4 +1,4 @@
-import snipperimg from "./snipperimg.png";
-export const assets = {
-  snipperimg,
-};
+// import snipperimg from "./snipperimg.png";
+// export const assets = {
+//   snipperimg,
+// };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import snipperimg from "../assets/assets";
+// import snipperimg from "../assets/assets";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -26,7 +26,9 @@ function Login() {
   return (
     <div
       className="login-container"
-      style={{ backgroundImage: `url(${snipperimg})` }}
+      style={{
+        backgroundImage: `url(https://static.vecteezy.com/system/resources/thumbnails/047/274/958/small/sniper-aiming-through-rifle-scope-in-a-forest-during-a-hunting-expedition-soft-sunlight-in-the-background-green-foliage-in-focus-photo.jpg)`,
+      }}
     >
       {/* Dark overlay */}
       <div className="login-overlay"></div>
