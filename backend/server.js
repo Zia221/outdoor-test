@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express?.json());
 
 // Connect to Database
-await connectDB(); // Call the function
+connectDB(); // Call the function
 
 // Routes
 app.use("/api/counts", require("./routes/countRoutes"));
